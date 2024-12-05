@@ -1,12 +1,13 @@
 DEV_PQC_URL = 'https://dev-pre-qualification-check-api.clover-technology.co.uk:6443/'
-OPPORTUNITY_NUMBER = '223'
+STAGING_PQC_URL = 'https://dev-staging-pre-qualification-check-api.clover-technology.co.uk:6443/'
 USER_ID = '1000877'
 
+TYPE_DESCRIPTIONS = {1: 'Associated Business', 2: 'Business', 3: 'Director', 4: 'Psc', 5: 'Financials'}
 TYPES_AND_SUBTYPES = [[1, 1],[1, 2], [1, 3],
                       #[2, 1], // Not including CCJ as paid
-                      [2, 2], [2, 3], [2, 4], [2, 5], [3, 1], [3, 2], [3, 3], [3, 4],
-                      [3, 5], [3, 6], [4, 1], [4, 2], [4, 3], [5, 1], [5, 2], [5, 3], [5, 4]]
-TYPE_DESCRIPTIONS = {1: 'Associated Business', 2: 'Business', 3: 'Director', 4: 'Psc', 5: 'Financials'}
+                      [2, 2], [2, 3], [2, 4], [2, 5], [2, 6], [3, 1], [3, 2], [3, 3], [3, 4],
+                      [3, 5], [4, 1], [4, 2], [4, 3], [5, 1], [5, 2], [5, 3], [5, 4]]
+
 SUBTYPE_DESCRIPTIONS = {
     1: {
         1: 'Associated Business Insolvency',
@@ -19,14 +20,14 @@ SUBTYPE_DESCRIPTIONS = {
         3: 'Accounts Overdue',
         4: 'Incorporation Date',
         5: 'Adverse SIC Code',
+        6: 'Charges',
     },
     3: {
         1: 'Director bankruptcy',
         2: 'Director disqualifications',
-        3: 'Director country of residence',
-        4: 'Director nationality',
-        5: 'Director average age',
-        6: 'Director Personal Insolvency',
+        3: 'Director nationality',
+        4: 'Director average age',
+        5: 'Director Personal Insolvency',
     },
     4: {
         1: 'UBO nationality',
@@ -49,12 +50,12 @@ SUBTYPE_TO_LABEL = {
     "2_3": "Business - Accounts Overdue",
     "2_4": "Business - Incorporation Date",
     "2_5": "Business - Adverse SIC Code",
+    "2_6": "Business - Charges",
     "3_1": "Director - Director bankruptcy",
     "3_2": "Director - Director disqualifications",
-    "3_3": "Director - Director country of residence",
-    "3_4": "Director - Director nationality",
-    "3_5": "Director - Director average age",
-    "3_6": "Director - Director Personal Insolvency",
+    "3_3": "Director - Director nationality",
+    "3_4": "Director - Director average age",
+    "3_5": "Director - Director Personal Insolvency",
     "4_1": "Psc - UBO nationality",
     "4_2": "Psc - UBO is overseas company?",
     "4_3": "Psc - Recent ownership changes",
@@ -72,12 +73,12 @@ SUBTYPE_TO_ARRAY = {
     "2_3": [],
     "2_4": [],
     "2_5": [],
+    "2_6": [],
     "3_1": [],
     "3_2": [],
     "3_3": [],
     "3_4": [],
     "3_5": [],
-    "3_6": [],
     "4_1": [],
     "4_2": [],
     "4_3": [],

@@ -1,7 +1,7 @@
 import requests
 from typing import List
 
-from lib.constants import DEV_PQC_URL, OPPORTUNITY_NUMBER, USER_ID, SUBTYPE_TO_ARRAY
+from lib.constants import DEV_PQC_URL, USER_ID, SUBTYPE_TO_ARRAY, STAGING_PQC_URL
 
 
 def get_pqc_data(company_numbers: List[str], max_company_numbers: int):
@@ -15,7 +15,9 @@ def get_pqc_data(company_numbers: List[str], max_company_numbers: int):
                 company_number = "0" + company_number
             if(i%10) == 0:
                 print(f"Fetching {i}/{max_length}")
-            response = requests.get(f"{DEV_PQC_URL}Pqc/{company_number}/{OPPORTUNITY_NUMBER}/{USER_ID}/true")
+            print(f"{DEV_PQC_URL}Pqc/{company_number}/{USER_ID}/true")
+            response = requests.get(f"{DEV_PQC_URL}Pqc/{company_number}/{USER_ID}/true")
+            print(response)
             json = response.json()
             get_pqc_response_data(json, result_dict)
         except Exception as e:
